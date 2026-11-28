@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ct-bg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#161C2C" />
+      <stop offset="55%" stop-color="#0F131E" />
+      <stop offset="100%" stop-color="#090C14" />
+    </linearGradient>
+    <linearGradient id="ct-border" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#FBBF24" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="ct-gold" x1="12" y1="14" x2="42" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="55%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="ct-emerald" x1="25" y1="24" x2="45" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+    <linearGradient id="ct-trend" x1="23" y1="36" x2="50" y2="15" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#FDE047" />
+    </linearGradient>
+  </defs>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="14.5" fill="url(#ct-bg)" />
+  <rect x="2.5" y="2.5" width="59" height="59" rx="14.5" stroke="url(#ct-border)" stroke-width="2.25" />
+  <rect x="6.5" y="6.5" width="51" height="51" rx="11" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+  <rect x="14" y="10.5" width="6" height="2" rx="1" fill="rgba(245,158,11,0.45)" />
+  <rect x="23" y="10.5" width="6" height="2" rx="1" fill="rgba(245,158,11,0.28)" />
+  <path d="M 41 18.5 A 16.5 16.5 0 1 0 41 46" stroke="url(#ct-gold)" stroke-width="4.6" stroke-linecap="round" />
+  <rect x="25.5" y="34" width="4.5" height="9.5" rx="1.4" fill="url(#ct-emerald)" />
+  <rect x="32.5" y="29" width="4.5" height="14.5" rx="1.4" fill="url(#ct-emerald)" />
+  <rect x="39.5" y="23.5" width="4.5" height="20" rx="1.4" fill="url(#ct-gold)" />
+  <path d="M 24.5 29.5 L 33.5 23 L 46.5 14" stroke="url(#ct-trend)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 40.5 13.5 L 47.5 13.2 L 46.8 20.2" stroke="#FDE047" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

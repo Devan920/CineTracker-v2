@@ -1,0 +1,164 @@
+version: 1
+
+supported_languages:
+  - Malayalam
+  - Tamil
+  - Hindi
+  - Telugu
+  - Kannada
+  - Pan-India
+
+sources:
+  sacnilk:
+    enabled: true
+    base_url: "https://www.sacnilk.com"
+    priority_weight: 1.0
+    categories:
+      Pan-India:
+        - "https://www.sacnilk.com/"
+        - "https://www.sacnilk.com/entertainmenttopbar/RecentMoviesCollection"
+        - "https://www.sacnilk.com/entertainmenttopbar/Box_Office_Collection"
+      Hindi:
+        - "https://www.sacnilk.com/entertainmenttopbar/Recent_Movies"
+        - "https://www.sacnilk.com/latest-boxoffice-collection/hindi-movies-2026"
+      Malayalam:
+        - "https://www.sacnilk.com/entertainmenttopbar/Recent_Movies"
+        - "https://www.sacnilk.com/latest-boxoffice-collection/malayalam-movies-2026"
+      Tamil:
+        - "https://www.sacnilk.com/entertainmenttopbar/Recent_Movies"
+        - "https://www.sacnilk.com/latest-boxoffice-collection/tamil-movies-2026"
+      Telugu:
+        - "https://www.sacnilk.com/entertainmenttopbar/Recent_Movies"
+        - "https://www.sacnilk.com/latest-boxoffice-collection/telugu-movies-2026"
+      Kannada:
+        - "https://www.sacnilk.com/entertainmenttopbar/Recent_Movies"
+        - "https://www.sacnilk.com/latest-boxoffice-collection/kannada-movies-2026"
+    selectors:
+      listing:
+        live_table:
+          css: "table.boxoffice-table"
+          xpath: "//table[contains(@class, 'boxoffice-table')]"
+        quicknews_day_link:
+          css: "a[href*='_Box_Office_Collection_Day_']"
+          xpath: "//a[contains(@href, '_Box_Office_Collection_Day_')]"
+        table:
+          css: "table.ds-t.ds-bt, table.ds-t"
+          xpath: "//table[contains(@class, 'ds-t') and contains(@class, 'ds-bt')]"
+        row:
+          css: "tbody tr, tr"
+          xpath: ".//tr[td]"
+        movie_link:
+          css: "a[href*='/movie/']"
+          xpath: ".//a[contains(@href, '/movie/')]"
+        film_cell_index: 1
+      detail:
+        title:
+          css: "h1"
+          xpath: "//h1[1]"
+        hero_worldwide:
+          css: ".ds-hero-fig__v"
+          xpath: "//div[contains(@class, 'ds-hero-fig__v')]"
+        stat_cards:
+          css: ".ds-stat"
+          xpath: "//div[contains(@class, 'ds-stat')]"
+        stat_key:
+          css: ".ds-stat__k"
+        stat_value:
+          css: ".ds-stat__v"
+        day_tables:
+          css: "table.ds-t.ds-ww-t"
+          xpath: "//table[contains(@class, 'ds-ww-t')]"
+        quicknews_tables:
+          css: "table.ds-t.ds-dp-t, table.ds-t"
+          xpath: "//table[contains(@class, 'ds-dp-t')]"
+        release_info_card:
+          css: "div.bg-white.rounded-lg"
+          xpath: "//div[contains(., 'Theatrical Release')]"
+        cast_heading:
+          xpath: "//h2[contains(., 'Cast')] | //h3[contains(., 'Cast')]"
+
+  koimoi:
+    enabled: true
+    base_url: "https://www.koimoi.com"
+    priority_weight: 0.75
+    categories:
+      Pan-India:
+        - "https://www.koimoi.com/box-office/"
+        - "https://www.koimoi.com/box-office/highest-grossers/highest-grossing-movies-in-india-all-languages/"
+        - "https://www.koimoi.com/box-office/all-time-grossers/highest-indian-grossers-worldwide/"
+      Hindi:
+        - "https://www.koimoi.com/box-office/hits-flops/bollywood-box-office-collection-verdicts/"
+      Malayalam:
+        - "https://www.koimoi.com/box-office/hits-flops/mollywood-malayalam-box-office-collection-verdicts/"
+      Tamil:
+        - "https://www.koimoi.com/box-office/hits-flops/kollywood-tamil-box-office-collection-verdicts/"
+      Telugu:
+        - "https://www.koimoi.com/box-office/hits-flops/tollywood-telugu-box-office-collection-verdicts/"
+      Kannada:
+        - "https://www.koimoi.com/box-office/hits-flops/sandalwood-kannada-box-office-collection-verdicts/"
+    selectors:
+      listing:
+        verdict_table:
+          css: "table.tablepress, .entry-content table, article table"
+          xpath: "//table[contains(@class, 'tablepress')]"
+        verdict_row:
+          css: "tbody tr, tr"
+          xpath: ".//tr[td]"
+        daily_article_links:
+          css: "a[href*='/box-office/']"
+          xpath: "//a[contains(@href, '/box-office/')]"
+      detail:
+        article_title:
+          css: "h1.entry-title, h1.tdb-title-text, h1"
+          xpath: "//h1[1]"
+        article_content:
+          css: ".td-post-content, .entry-content, article"
+          xpath: "//div[contains(@class, 'td-post-content') or contains(@class, 'entry-content')]"
+        article_tables:
+          css: ".td-post-content table, .entry-content table, article table"
+          xpath: "//article//table"
+        article_lists:
+          css: ".td-post-content ul li, .entry-content ul li, article ul li"
+          xpath: "//article//ul/li"
+
+x_trackers:
+  enabled: true
+  priority_weight: 0.65
+  max_age_hours: 48
+  syndication_url_template: "https://syndication.twitter.com/srv/timeline-profile/screen-name/{handle}"
+  keywords:
+    - "Crore"
+    - "Cr"
+    - "Lakhs"
+    - "Lakh"
+    - "Gross"
+    - "Nett"
+    - "Net"
+    - "Day 1"
+    - "Day 2"
+    - "Weekend"
+    - "Worldwide"
+    - "WW"
+    - "Kerala"
+    - "BoxOffice"
+    - "BO"
+  handles:
+    Forumkeralam1:
+      language: "Malayalam"
+      tags: ["Malayalam", "Pan-India"]
+    ABGeorge_:
+      language: "Malayalam"
+      tags: ["Malayalam", "Pan-India"]
+    FridayMatinee:
+      language: "Malayalam"
+      tags: ["Malayalam"]
+    taran_adarsh:
+      language: "Hindi"
+      tags: ["Hindi", "Pan-India"]
+    ManobalaV:
+      language: "Tamil"
+      tags: ["Tamil", "Telugu", "Pan-India"]
+    SacnilkEntmt:
+      language: "Pan-India"
+      tags: ["Pan-India", "Hindi", "Malayalam", "Tamil", "Telugu", "Kannada"]
+

@@ -1,0 +1,25 @@
+# Environment & secrets — NEVER commit these
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+
+# Node / Vite build outputs
+node_modules/
+dist/
+dist-ssr/
+dev-dist/
+*.tsbuildinfo
+*.local
+
+# Mobile / build artifacts
+android/
+ios/
+*.apk
+*.aab
+*.ipa
+
+# Logs
+logs/
+*.log

@@ -1,0 +1,16 @@
+.git
+.env
+*.env
+api/.env
+scraper/.env
+web/.env
+web/node_modules
+web/dist
+__pycache__
+*.pyc
+.pytest_cache
+.venv
+venv
+scraper/logs/*.log*
+scraper/logs/last_run_report.json
+scraper/cache/*.json

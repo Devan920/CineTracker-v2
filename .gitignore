@@ -1,0 +1,43 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+api/.env
+scraper/.env
+web/.env
+.env.local
+.env.*.local
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Node / Vite artifacts
+node_modules/
+dist/
+dist-ssr/
+dev-dist/
+*.tsbuildinfo
+
+# Mobile / Android / iOS build artifacts
+android/
+ios/
+*.apk
+*.aab
+*.ipa
+
+# Runtime logs & local cache
+logs/
+scraper/logs/
+scraper/cache/*.json
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
